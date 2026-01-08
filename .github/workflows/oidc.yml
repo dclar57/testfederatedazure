@@ -25,6 +25,7 @@ jobs:
           az account show --output table
           echo "Liste des resource groups (5 premiers) :"
           az group list --query "[].{name:name, location:location}" --output table | head -n 6
+          az group create --name testcreategroup --location westeurope
 
       - name: Déconnexion
         run: az logout
